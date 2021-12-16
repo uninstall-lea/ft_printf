@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbisson <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/16 20:26:07 by lbisson           #+#    #+#             */
+/*   Updated: 2021/12/16 21:17:34 by lbisson          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -14,13 +26,13 @@ typedef int	(*t_fptr)();
 int		ft_printf(const char *format, ...);
 
 /* CONVERSIONS */
-int		print_c(va_list args);
-int		print_s(va_list args);
-int		print_p(va_list args);
-int		print_x(va_list args);
-int		print_X(va_list args);
-int		print_i(va_list args);
-int		print_ui(va_list args);
+int		print_char(va_list args);
+int		print_str(va_list args);
+int		print_address(va_list args);
+int		print_hexa_lowercase(va_list args);
+int		print_hexa_uppercase(va_list args);
+int		print_int(va_list args);
+int		print_unsigned_int(va_list args);
 int		print_percent(va_list args);
 
 /* UTILS */

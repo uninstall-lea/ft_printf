@@ -1,11 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbisson <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/16 20:27:05 by lbisson           #+#    #+#             */
+/*   Updated: 2021/12/16 21:14:50 by lbisson          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 t_fptr	dispatch(const char conv)
 {
-	int				index;
-	static t_fptr	callback[] = {print_c, print_s, print_p, print_x, print_X,
-								  print_i, print_i, print_ui, print_percent};
+	int		index;
+	t_fptr	callback[9];
 
+	callback[0] = print_char;
+	callback[1] = print_str;
+	callback[2] = print_address;
+	callback[3] = print_hexa_lowercase;
+	callback[4] = print_hexa_uppercase;
+	callback[5] = print_int;
+	callback[6] = print_int;
+	callback[7] = print_unsigned_int;
+	callback[8] = print_percent;
 	index = ft_strchr(FORMAT_SPECIFIERS, conv) - FORMAT_SPECIFIERS;
 	return (callback[index]);
 }

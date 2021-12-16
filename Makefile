@@ -1,15 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lbisson <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/16 20:26:32 by lbisson           #+#    #+#              #
+#    Updated: 2021/12/16 21:15:58 by lbisson          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CFLAGS = -Wall -Wextra -Werror -I ./incs
 CC = gcc
 EXEC = libftprintf.a
 
 SRCS =  srcs/ft_printf.c \
-		srcs/print_conversions/print_c.c \
-		srcs/print_conversions/print_s.c \
-		srcs/print_conversions/print_p.c \
-		srcs/print_conversions/print_x.c \
-		srcs/print_conversions/print_X.c \
-		srcs/print_conversions/print_i.c \
-		srcs/print_conversions/print_ui.c \
+		srcs/print_conversions/print_char.c \
+		srcs/print_conversions/print_str.c \
+		srcs/print_conversions/print_address.c \
+		srcs/print_conversions/print_hexa_lowercase.c \
+		srcs/print_conversions/print_hexa_uppercase.c \
+		srcs/print_conversions/print_int.c \
+		srcs/print_conversions/print_unsigned_int.c \
 		srcs/print_conversions/print_percent.c \
 
 UTILS = srcs/utils/ft_bzero.c \

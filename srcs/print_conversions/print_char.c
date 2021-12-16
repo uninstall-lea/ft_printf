@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_percent.c                                    :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbisson <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 20:27:43 by lbisson           #+#    #+#             */
-/*   Updated: 2021/12/16 20:27:51 by lbisson          ###   ########.fr       */
+/*   Created: 2021/12/16 20:27:20 by lbisson           #+#    #+#             */
+/*   Updated: 2021/12/16 21:09:45 by lbisson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_percent(va_list args)
+int	print_char(va_list args)
 {
-	(void)args;
-	return (write(1, "%", 1));
+	char	c;
+
+	c = (char)va_arg(args, int);
+	return (write(1, &c, 1));
 }
